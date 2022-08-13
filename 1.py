@@ -3,9 +3,10 @@ import re
 def isValidHtml(html) :
     d = defaultdict(int)
     htmlt =html.split('<')
+    print(htmlt)
     for a in htmlt :
         if ">" in a and "/" not in a :
-            d[a[:len(a)-1]] += 1
+            d[a[:a.index(">")]] += 1
         elif ">" in a and "/" in a :
             d[a[1:len(a)-1]] -= 1
             if d[a[1:len(a)-1]] < 0 :
