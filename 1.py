@@ -15,7 +15,7 @@ def isValidHtml(html) :
     for i,v in d.items():
         if v != 0 :
             return False
-    r = re.search("<([a-z]+)>*<([a-z]+)>*</([a-z]+)>*</([a-z]+)>",html)
-    if r is not None and (r.group(2) != r.group(3)) :
+    r = re.search("<([a-z]+)>*</([a-z]+)>*</([a-z]+)>*",html)
+    if r is not None and (r.group(1) != r.group(2)) :
         return False
     return True
